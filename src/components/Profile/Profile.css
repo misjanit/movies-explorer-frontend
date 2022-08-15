@@ -1,0 +1,623 @@
+.profile__container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1200px;
+    width: 100%;
+    height: 100vh;
+
+    margin: 0 auto;
+    padding: 0;
+
+    background: #FAFAFA;
+
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+/* @media screen and (max-width: 550px) {
+    .profile__container {
+    }
+} */
+
+.profile__container-active-menu {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__container-active-menu {
+        display: flex;
+        flex-direction: column;
+
+        height: 100vh;
+
+        margin: 0 auto 0 auto;
+        padding: 0;
+
+        background: grey;
+
+        font-family: 'Inter';
+        font-style: normal;
+    }
+}
+
+
+
+.profile__header {
+    display: flex;
+    flex-direction: row;
+
+    max-width: 1280px;
+    width: calc(100%-60px);
+    height: 74px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 30px 50px 30px;
+    padding: 0;
+}
+
+@media screen and (max-width: 550px) {
+    .profile__header {
+        width: 100%;
+        margin: 0 auto 50px auto;
+    }
+}
+
+.profile__logo {
+    display: inline-block;
+
+    max-width: 38px;
+    width: 100%;
+    height: 38px;
+
+    margin: 0 auto 0 0px;
+    padding: 0;
+}
+
+.profile__logo-unactive {
+    display: inline-block;
+
+    max-width: 38px;
+    width: 100%;
+    height: 38px;
+
+    margin: 0 auto 0 0px;
+    padding: 0;
+
+    opacity: 0.3;
+}
+
+@media screen and (max-width: 550px) {
+
+    .profile__logo,
+    .profile__logo-unactive {
+        margin: 0 auto 0 14px;
+    }
+}
+
+
+/* Стили для бургера */
+.profile__navigation {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__navigation {
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 520px;
+        overflow: hidden;
+
+        background-color: #FAFAFA;
+
+        transition: 0.55s opacity, 0.55s visibility;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .profile__navigation {
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 100%;
+        overflow: hidden;
+
+        background-color: #FAFAFA;
+
+        transition: 0.55s opacity, 0.55s visibility;
+    }
+}
+
+.profile__navigation-uncative {
+    display: none;
+}
+
+.profile__menu-button,
+.profile__burger-line-first,
+.profile__burger-line-second,
+.profile__burger-line-third,
+.profile__burger-line-fourth {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__menu-button {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 28px;
+        height: 28px;
+
+        margin: 3px 0px 0 auto;
+        padding: 0;
+
+        border: none;
+        background-color: transparent;
+
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .profile__burger-line-first {
+        display: block;
+        position: absolute;
+
+        top: 2px;
+        right: 0px;
+
+        width: 28px;
+        height: 3px;
+
+        background-color: black;
+    }
+
+    .profile__burger-line-second,
+    .profile__burger-line-third {
+        display: block;
+        position: absolute;
+
+        top: 11px;
+        right: 0px;
+
+        width: 28px;
+        height: 3px;
+
+        background-color: black;
+    }
+
+    .profile__burger-line-fourth {
+        display: block;
+        position: absolute;
+
+        top: 20px;
+        right: 0px;
+
+        width: 28px;
+        height: 3px;
+
+        background-color: black;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .profile__menu-button {
+        margin: 3px 30px 0 auto;
+    }
+}
+
+.profile__wrapper-links {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 500px;
+    height: 122px;
+
+    justify-content: space-around;
+
+    margin: 159px auto 0 auto;
+    padding: 0;
+}
+
+
+.profile__wrapper-links-unactive {
+    display: none;
+}
+
+.profile__main-page {
+    display: block;
+
+    margin: 0 auto;
+    padding: 0;
+
+    background-color: transparent;
+    border: 2px solid #FAFAFA;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+@media screen and (max-width: 330px) {
+    .profile__main-page {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+}
+
+.profile__my-movies {
+    display: block;
+
+    margin: 0 auto 0 auto;
+    padding: 0;
+
+    background-color: transparent;
+    border: 2px solid #FAFAFA;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+@media screen and (max-width: 330px) {
+    .profile__my-movies {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+}
+
+.profile__my-saved-movies {
+    display: block;
+
+    margin: 0 auto;
+    padding: 0;
+
+    background-color: transparent;
+    border: 2px solid #FAFAFA;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+@media screen and (max-width: 330px) {
+    .profile__my-saved-movies {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+}
+
+/* Стили для обычного меню */
+
+.profile__navigation-wrapper {
+    display: flex;
+    flex-direction: row;
+
+
+    height: 74px;
+
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+
+    align-items: center;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__navigation-wrapper {
+        display: none;
+    }
+}
+
+.profile__movies-wrapper {
+    display: flex;
+
+    margin: 0 50px 0 0;
+    padding: 0;
+}
+
+.profile__all-movies {
+    max-width: 80px;
+    width: 100%;
+
+    margin: 0 20px 0 0;
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.profile__saved-movies {
+    max-width: 150px;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.profile__my-account {
+    display: flex;
+    flex-direction: row;
+
+    width: 100px;
+    height: 32px;
+
+    align-items: center;
+
+    margin: 0 auto;
+    padding: 0;
+
+    background: #FAFAFA;
+    box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
+    border-radius: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__my-account {
+        display: flex;
+        flex-direction: row;
+
+        width: 100px;
+        height: 32px;
+
+        align-items: center;
+
+        margin: auto auto 90px auto;
+        padding: 0;
+
+        background: #FAFAFA;
+        box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
+        border-radius: 40px;
+    }
+}
+
+.profile__nav-avatar {
+    max-width: 10.38px;
+    width: 100%;
+    height: 10.38px;
+
+    margin: auto;
+    padding: 0;
+
+    background: #F4F4F4;
+    border-radius: 50px;
+}
+
+.profile__nav-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.profile__nav-avatar-wrapper {
+    display: flex;
+
+    max-width: 26px;
+    width: 100%;
+    height: 26px;
+
+    margin: 0 3px 0 auto;
+    padding: 0;
+
+    align-items: center;
+
+    background: #F4F4F4;
+    border-radius: 50px;
+}
+
+.profile__main-page:hover,
+.profile__my-movies:hover,
+.profile__my-saved-movies:hover {
+    border-bottom: 2px solid black;
+}
+
+.profile__account-caption {
+    max-width: 53px;
+    width: 100%;
+
+    margin: 0 0 0 auto;
+    padding: 0;
+
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 12px;
+}
+
+/* Main */
+
+.profile__main {
+    max-width: 410px;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 0;
+    
+}
+
+@media screen and (max-width: 550px) {
+    .profile__main {
+        max-width: 320px;
+        padding-left: 30px;
+    padding-right: 30px;
+    }
+}
+
+.profile__title {
+
+    margin: 0 auto 123px auto;
+    padding: 0;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+}
+
+.profile__username-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    height: 14px;
+
+    align-items: center;
+
+    margin: 0 0 16px 0;
+    padding: 0;
+}
+
+.profile__username {
+    margin: 0;
+    padding: 0;
+
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.profile__name-of-user {
+    margin: 0 0 0 auto;
+    padding: 0;
+
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+}
+
+.profile__line {
+    width: 100%;
+    height: 1px;
+
+    border-bottom: 1px solid #E8E8E8;
+
+    margin: 0;
+    padding: 0;
+}
+
+.profile__email-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    margin: 17px 0 0 0;
+    padding: 0;
+}
+
+.profile__email {
+
+    margin: 0;
+    padding: 0;
+
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.profile__email-of-user {
+
+    margin: 0 0 0 auto;
+    padding: 0;
+
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+}
+
+.profile__control-menu {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 410px;
+    width: 100%;
+
+    margin: auto auto 70px auto;
+    padding: 0;
+}
+
+.profile__edit-profile-btn {
+    max-width: 410px;
+    width: 100%;
+    height: 16px;
+
+    margin: 0 auto 16px auto;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.profile__logout-btn {
+    max-width: 410px;
+    width: 100%;
+    height: 16px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    color: #EE3465;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    text-align: center;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+}

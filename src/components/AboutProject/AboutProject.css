@@ -1,0 +1,172 @@
+.aboutproject__container {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.aboutproject__header {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.aboutproject__title {
+    max-width: 1140px;
+    width: calc(100% - 100px);
+
+    margin: 110px 70px 70px 70px;
+    padding: 0;
+    padding-bottom: 23px;
+
+    border-bottom: 1px solid black;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+}
+
+.aboutproject__main {
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 70px 0 70px;
+
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.aboutproject__stages {
+    display: block;
+}
+
+.aboutproject__diploma-stages {
+    max-width: 550px;
+    width: 100%;
+
+    margin: 0 0 26px auto;
+    padding: 0;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+}
+
+.aboutproject__description {
+    max-width: 550px;
+    width: 100%;
+
+    margin: 0 0 110px auto;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.aboutproject__backend-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.aboutproject__backend-week-line {
+    max-width: 352px;
+    width: 100%;
+    height: 36px;
+    
+    margin: 0;
+
+    background-color: #F2F2F2;
+}
+
+.aboutproject__backend-week {
+    max-width: 228px;
+    width: 100%;
+    height: 26px;
+
+    margin: 0 0;
+    padding: 0;
+    padding-top: 10px;
+
+    background-color: #3456F3;
+    color: white;
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+.aboutproject__backend {
+    max-width: 228px;
+    width: 100%;
+    color: #A0A0A0;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+.aboutproject__weeks {
+    display: block;
+}
+
+.aboutproject__diploma-weeks {
+    max-width: 550px;
+    width: 100%;
+    
+    margin: 0 auto 26px 40px;
+    padding: 0;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+}
+
+.aboutproject__deadlines {
+    max-width: 550px;
+    width: 100%;
+
+    margin: 0 auto 110px 40px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.aboutproject__frontend-week {
+    max-width: 570px;
+    width: 100%;
+    height: 26px;
+    
+    margin: 0;
+    padding-top: 10px;
+
+    background-color: #F2F2F2;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+.aboutproject__frontend {
+    color: #A0A0A0;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}

@@ -17,11 +17,6 @@ const AboutProject = (props) => {
                         Составление плана, работу над бэкендом, вёрстку,
                         добавление функциональности
                         и финальные доработки.</p>
-                    <div className='aboutproject__backend-container'>
-                        <p className='aboutproject__backend-week'>1 неделя</p>
-                        <div className='aboutproject__backend-week-line'></div>
-                    </div>
-                    <p className='aboutproject__backend'>Back-end</p>
                 </div>
                 <div className='aboutproject__weeks'>
                     <h2 className='aboutproject__diploma-weeks'>
@@ -31,10 +26,18 @@ const AboutProject = (props) => {
                         У каждого этапа был мягкие и жётский дедлайн,
                         которые нужно было соблюдать,
                         чтобы успешно защититься.</p>
-                        <p className='aboutproject__frontend-week'>4 недели</p>                       
-                    <p className='aboutproject__frontend'>Front-end</p>
                 </div>
             </main>
+            <article className='aboutproject__stages-container'>
+                <div className='aboutproject__backend-container'>
+                    <p className='aboutproject__backend-week'>1 неделя</p>
+                    <p className='aboutproject__backend-caption'>Back-end</p>
+                </div>
+                <div className='aboutproject__frontend-container'>
+                    <p className='aboutproject__frotend-week'>4 недели</p>
+                    <p className='aboutproject__frontend-caption'>Front-end</p>
+                </div>
+            </article>
         </section>
     )
 }

@@ -36,10 +36,19 @@
     display: flex;
     flex-direction: row;
 
-    margin: 0 70px 0 70px;
+    max-width: 1140px;
+    width: calc(100% - 140px);
 
-    align-items: flex-start;
-    justify-content: center;
+    margin: 0 70px 0 70px;
+    align-self: center;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutproject__main {
+        max-width: 668px;
+        width: calc(100% - 100px);
+        margin: 0 50px 0 50px;
+    }
 }
 
 .aboutproject__stages {
@@ -50,7 +59,7 @@
     max-width: 550px;
     width: 100%;
 
-    margin: 0 0 26px auto;
+    margin: 0 20px 26px auto;
     padding: 0;
 
     text-align: left;
@@ -64,7 +73,7 @@
     max-width: 550px;
     width: 100%;
 
-    margin: 0 0 110px auto;
+    margin: 0 20px 110px 0;
 
     text-align: left;
     font-weight: 400;
@@ -72,60 +81,11 @@
     line-height: 20px;
 }
 
-.aboutproject__backend-container {
-    display: flex;
-    flex-direction: row;
-}
-
-.aboutproject__backend-week-line {
-    max-width: 352px;
-    width: 100%;
-    height: 36px;
-    
-    margin: 0;
-
-    background-color: #F2F2F2;
-}
-
-.aboutproject__backend-week {
-    max-width: 228px;
-    width: 100%;
-    height: 26px;
-
-    margin: 0 0;
-    padding: 0;
-    padding-top: 10px;
-
-    background-color: #3456F3;
-    color: white;
-
-    text-align: center;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-}
-
-.aboutproject__backend {
-    max-width: 228px;
-    width: 100%;
-    color: #A0A0A0;
-
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-}
-
-.aboutproject__weeks {
-    display: block;
-}
-
 .aboutproject__diploma-weeks {
     max-width: 550px;
     width: 100%;
-    
-    margin: 0 auto 26px 40px;
+
+    margin: 0 0 26px auto;
     padding: 0;
 
     text-align: left;
@@ -139,21 +99,90 @@
     max-width: 550px;
     width: 100%;
 
-    margin: 0 auto 110px 40px;
+    margin: 0 0 110px auto;
 
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
 }
 
-.aboutproject__frontend-week {
-    max-width: 570px;
-    width: 100%;
-    height: 26px;
-    
-    margin: 0;
-    padding-top: 10px;
+/* Нижняя часть */
 
+.aboutproject__stages-container {
+    max-width: 1140px;
+    width: calc(100% - 140px);
+
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 70px 0 70px;
+    align-self: center;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutproject__stages-container {
+        max-width: 668px;
+        width: calc(100% - 100px);
+
+        margin: 0 50px 0 50px;
+    }
+}
+
+.aboutproject__backend-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 228px;
+    height: 72;
+    margin: 0;
+}
+
+.aboutproject__backend-week {
+    height: 26px;
+    padding-top: 10px;
+    margin: 0;
+
+    background-color: #3456F3;
+    color: white;
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+.aboutproject__backend-caption {
+    max-width: 228px;
+    width: 100%;
+
+    padding: 0;
+    margin: 14px 0 0 0;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+
+    color: #A0A0A0;
+}
+
+.aboutproject__frontend-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 912px;
+    height: 32;
+    margin: 0;
+}
+
+.aboutproject__frotend-week {
+    max-width: 912px;
+    height: 26px;
+
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
     background-color: #F2F2F2;
 
     font-weight: 400;
@@ -162,11 +191,15 @@
     text-align: center;
 }
 
-.aboutproject__frontend {
-    color: #A0A0A0;
+.aboutproject__frontend-caption {
+
+    padding: 0;
+    margin: 14px 0 0 0;
 
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
     text-align: center;
+
+    color: #A0A0A0;
 }

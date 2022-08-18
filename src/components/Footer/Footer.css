@@ -1,0 +1,78 @@
+.footer___container {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.footer__caption {
+    max-width: 1140px;
+    width: calc(100% - 140px);
+
+    margin: 110px 70px 20px 70px;
+    padding: 0;
+    padding-bottom: 23px;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #A0A0A0;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: row;
+
+    max-width: 1140px;
+    width: calc(100% - 140px);
+
+    margin: 0px 70px 0px 70px;
+
+    justify-content: space-between;
+}
+
+.footer__year {
+    margin: 0;
+    
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.footer__socials {
+    display: flex;
+    flex-direction: row;
+
+    margin: 0;
+}
+
+.footer__yandex-practicum {
+    margin: 0 20px 0 0;
+
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.footer__github {
+    margin: 0 20px 0 0;
+
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+
+}
+
+.footer__vk {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}

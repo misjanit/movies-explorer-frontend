@@ -32,6 +32,20 @@
     letter-spacing: -0.04em;
 }
 
+@media screen and (max-width: 550px) {
+    .aboutproject__title {
+        width: calc(100% - 36px);
+        margin: 70px 18px 60px 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
 .aboutproject__main {
     display: flex;
     flex-direction: row;
@@ -51,8 +65,23 @@
     }
 }
 
+@media screen and (max-width: 550px) {
+    .aboutproject__main {
+        flex-direction: column;
+        width: calc(100% - 36px);
+        margin: 0 18px 0 18px;
+    }
+}
+
 .aboutproject__stages {
     display: block;
+    margin: 0 30px 0 0;
+}
+
+@media screen and (max-width: 550px) {
+    .aboutproject__stages {
+        margin: 0;
+    }
 }
 
 .aboutproject__diploma-stages {
@@ -69,6 +98,14 @@
     letter-spacing: -0.04em;
 }
 
+@media screen and (max-width: 400px) {
+    .aboutproject__diploma-stages {
+        margin: 0 0 16px auto;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
 .aboutproject__description {
     max-width: 550px;
     width: 100%;
@@ -79,6 +116,19 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
+}
+
+@media screen and (max-width: 550px) {
+    .aboutproject__description {
+        margin: 0 auto 56px auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__description {
+        font-size: 11px;
+        line-height: 16px;
+    }
 }
 
 .aboutproject__diploma-weeks {
@@ -95,6 +145,15 @@
     letter-spacing: -0.04em;
 }
 
+@media screen and (max-width: 400px) {
+    .aboutproject__diploma-weeks {
+        margin: 0 0 16px auto;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+}
+
 .aboutproject__deadlines {
     max-width: 550px;
     width: 100%;
@@ -104,6 +163,19 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
+}
+
+@media screen and (max-width: 550px) {
+    .aboutproject__deadlines {
+        margin: 0 0 60px auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__deadlines {
+        font-size: 11px;
+        line-height: 16px;
+    }
 }
 
 /* Нижняя часть */
@@ -128,11 +200,19 @@
     }
 }
 
+@media screen and (max-width: 550px) {
+    .aboutproject__stages-container {
+        width: calc(100% - 36px);
+        margin: 0 18px 0 18px;
+    }
+}
+
 .aboutproject__backend-container {
     display: flex;
     flex-direction: column;
 
-    width: 228px;
+    max-width: 228px;
+    width: 100%;
     height: 72;
     margin: 0;
 }
@@ -152,6 +232,23 @@
     text-align: center;
 }
 
+@media screen and (max-width: 550px) {
+    .aboutproject__backend-week {
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__backend-week {
+        height: 23px;
+        padding-top: 12px;
+
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+    }
+}
+
 .aboutproject__backend-caption {
     max-width: 228px;
     width: 100%;
@@ -165,6 +262,15 @@
     text-align: center;
 
     color: #A0A0A0;
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__backend-caption {
+        margin: 10px 0 0 0;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+    }
 }
 
 .aboutproject__frontend-container {
@@ -191,6 +297,17 @@
     text-align: center;
 }
 
+@media screen and (max-width: 400px) {
+    .aboutproject__frotend-week {
+        height: 23px;
+        padding-top: 12px;
+
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+    }
+}
+
 .aboutproject__frontend-caption {
 
     padding: 0;
@@ -202,4 +319,13 @@
     text-align: center;
 
     color: #A0A0A0;
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__frontend-caption {
+        margin: 10px 0 0 0;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+    }
 }

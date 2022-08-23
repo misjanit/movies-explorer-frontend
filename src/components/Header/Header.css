@@ -1,0 +1,460 @@
+.header__container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1200px;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 0;
+
+    /* background: #FAFAFA; */
+
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.header__container-active-menu {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .header__container-active-menu {
+        display: flex;
+        flex-direction: column;
+
+        height: 100vh;
+
+        margin: 0 auto 0 auto;
+        padding: 0;
+
+        background: grey;
+
+        font-family: 'Inter';
+        font-style: normal;
+    }
+}
+
+.header__main {
+    display: flex;
+    flex-direction: row;
+
+    max-width: 1280px;
+    width: calc(100% - 60px);
+    height: 74px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 0;
+}
+
+@media screen and (max-width: 550px) {
+    .header__main {
+        width: 100%;
+        margin: 0 auto 50px auto;
+    }
+}
+
+.header__logo {
+    display: inline-block;
+
+    max-width: 38px;
+    width: 100%;
+    height: 38px;
+
+    margin: 0 auto 0 0px;
+    padding: 0;
+}
+
+.header__logo-unactive {
+    display: inline-block;
+
+    max-width: 38px;
+    width: 100%;
+    height: 38px;
+
+    margin: 0 auto 0 0px;
+    padding: 0;
+
+    opacity: 0.3;
+}
+
+@media screen and (max-width: 550px) {
+    .header__logo,
+    .header__logo-unactive {
+        margin: 0 auto 0 14px;
+    }
+}
+
+/* Стили для бургера */
+.header__navigation {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .header__navigation {
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 520px;
+        overflow: hidden;
+
+        background-color: #FAFAFA;
+
+        transition: 0.55s opacity, 0.55s visibility;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .header__navigation {
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 100%;
+        overflow: hidden;
+
+        background-color: #FAFAFA;
+
+        transition: 0.55s opacity, 0.55s visibility;
+    }
+}
+
+.header__navigation-uncative {
+    display: none;
+}
+
+.header__menu-button,
+.header__burger-line-first,
+.header__burger-line-second,
+.header__burger-line-third,
+.header__burger-line-fourth {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .header__menu-button {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 28px;
+        height: 28px;
+
+        margin: 3px 0px 0 auto;
+        padding: 0;
+
+        border: none;
+        background-color: transparent;
+
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .header__burger-line-first {
+        display: block;
+        position: absolute;
+
+        top: 2px;
+        right: 0px;
+
+        width: 28px;
+        height: 3px;
+
+        background-color: black;
+    }
+
+    .header__burger-line-second,
+    .header__burger-line-third {
+        display: block;
+        position: absolute;
+
+        top: 11px;
+        right: 0px;
+
+        width: 28px;
+        height: 3px;
+
+        background-color: black;
+    }
+
+    .header__burger-line-fourth {
+        display: block;
+        position: absolute;
+
+        top: 20px;
+        right: 0px;
+
+        width: 28px;
+        height: 3px;
+
+        background-color: black;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header__menu-button {
+        margin: 3px 30px 0 auto;
+    }
+}
+
+.header__wrapper-links {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 500px;
+    height: 122px;
+
+    justify-content: space-around;
+
+    margin: 159px auto 0 auto;
+    padding: 0;
+}
+
+
+.header__wrapper-links-unactive {
+    display: none;
+}
+
+.header__main-page {
+    display: block;
+
+    margin: 0 auto;
+    padding: 0;
+
+    background-color: transparent;
+    border: 2px solid #FAFAFA;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+@media screen and (max-width: 330px) {
+    .header__main-page {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+}
+
+.header__my-movies {
+    display: block;
+
+    margin: 0 auto 0 auto;
+    padding: 0;
+
+    background-color: transparent;
+    border: 2px solid #FAFAFA;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+@media screen and (max-width: 330px) {
+    .header__my-movies {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+}
+
+.header__my-saved-movies {
+    display: block;
+
+    margin: 0 auto;
+    padding: 0;
+
+    background-color: transparent;
+    border: 2px solid #FAFAFA;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+@media screen and (max-width: 330px) {
+    .header__my-saved-movies {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+}
+
+/* Стили для обычного меню */
+
+.header__navigation-wrapper {
+    display: flex;
+    flex-direction: row;
+
+
+    height: 74px;
+
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+
+    align-items: center;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__navigation-wrapper {
+        display: none;
+    }
+}
+
+.header__movies-wrapper {
+    display: flex;
+
+    margin: 0 50px 0 0;
+    padding: 0;
+}
+
+.header__all-movies {
+    max-width: 80px;
+    width: 100%;
+
+    margin: 0 20px 0 0;
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.header__saved-movies {
+    max-width: 150px;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.header__my-account {
+    display: flex;
+    flex-direction: row;
+
+    width: 100px;
+    height: 32px;
+
+    align-items: center;
+
+    margin: 0 auto;
+    padding: 0;
+
+    background: #FAFAFA;
+    box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
+    border-radius: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__my-account {
+        display: flex;
+        flex-direction: row;
+
+        width: 100px;
+        height: 32px;
+
+        align-items: center;
+
+        margin: auto auto 90px auto;
+        padding: 0;
+
+        background: #FAFAFA;
+        box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
+        border-radius: 40px;
+    }
+}
+
+.header__nav-avatar {
+    max-width: 10.38px;
+    width: 100%;
+    height: 10.38px;
+
+    margin: auto;
+    padding: 0;
+
+    background: #F4F4F4;
+    border-radius: 50px;
+}
+
+.header__nav-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.header__nav-avatar-wrapper {
+    display: flex;
+
+    max-width: 26px;
+    width: 100%;
+    height: 26px;
+
+    margin: 0 3px 0 auto;
+    padding: 0;
+
+    align-items: center;
+
+    background: #F4F4F4;
+    border-radius: 50px;
+}
+
+.header__main-page:hover,
+.header__my-movies:hover,
+.header__my-saved-movies:hover {
+    border-bottom: 2px solid black;
+}
+
+.header__account-caption {
+    max-width: 53px;
+    width: 100%;
+
+    margin: 0 0 0 auto;
+    padding: 0;
+
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 12px;
+}

@@ -12,15 +12,16 @@ const AboutMe = (props) => {
                 <div className="aboutme__student-container">
                     <div className="aboutme__student-wrapper">
                         <p className="aboutme__student-name">Андрей</p>
-                        <p className="aboutme__student-caption">Студент, 23 года</p>
-                        <p className="aboutme__student-description">Я родился и живу в Саратове,
-                            закончил факультет экономики СГУ.
-                            У меня есть жена и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом.
-                            Недавно начал кодить. С 2015 года работал в компании «СКБ Контур».
+                        <p className="aboutme__student-caption">Фронтенд-разработчик, 23 года</p>
+                        <p className="aboutme__student-description">
+                            Я живу Екатеринбурге,
+                            закончил факультет юриспруденции РАНХиГС.
+                            Живу с девушкой, хотим собаку как на фотографии.
                             После того, как прошёл курс по веб-разработке,
-                            начал заниматься фриланс-заказами и ушёл
-                            с постоянной работы.</p>
-                        <div className="aboutme__student-socials">
+                            нашёл работу в Уральском Федеральном Университете, 
+                            занимаюсь разработкой онлайн-курсов.
+                            </p>
+                            <div className="aboutme__student-socials">
                             <a href="/" className="aboutme__socials-telegram">
                                 Telegram
                             </a>
@@ -35,28 +36,7 @@ const AboutMe = (props) => {
                         href="/"
                     />
                 </div>
-                <p className="aboutme__portfolio-caption">Портфолио</p>
-                <div className="aboutme__portfolio-wrapper">
-                    <p className="aboutme__portfolio-static-site">Статичный сайт</p>
-                    <img src={require("../../images/link-arrow.svg").default}
-                        className="aboutme__link-arrow"
-                        alt="Перейти по ссылке"
-                        href="/"/>
-                </div>
-                <div className="aboutme__portfolio-wrapper">
-                    <p className="aboutme__portfolio-adaptive-site">Адаптивный сайт</p>
-                    <img src={require("../../images/link-arrow.svg").default}
-                        className="aboutme__link-arrow"
-                        alt="Перейти по ссылке"
-                        href="/"/>
-                </div>
-                <div className="aboutme__portfolio-wrapper">
-                    <p className="aboutme__portfolio-app">Одностраничное приложение</p>
-                    <img src={require("../../images/link-arrow.svg").default}
-                        className="aboutme__link-arrow"
-                        alt="Перейти по ссылке"
-                        href="/"/>
-                </div>
+                
             </main>
         </section >
     )

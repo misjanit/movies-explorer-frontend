@@ -12,6 +12,7 @@ const Footer = (props) => {
                     <p className="footer__yandex-practicum">Яндекс.Практикум</p>
                     <p className="footer__github">GitHub</p>
                     <p className="footer__vk">VK</p>
+                    <p className="footer__year-mobile">© 2022</p>
                 </div>
             </div>
         </footer>

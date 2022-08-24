@@ -15,7 +15,7 @@
     padding: 0;
 }
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 990px) {
     .film__image {
         width: 339px;
         height: 190px;

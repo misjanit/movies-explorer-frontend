@@ -1,5 +1,5 @@
 .films {
-    max-width: 1280px;
+    max-width: 1140px;
     margin: 0 auto 68px auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -10,16 +10,17 @@
     font-style: normal;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1279px) {
     .films {
         max-width: 850px;
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 990px) {
     .films {
-        max-width: 708px;
+        max-width: 720px;
+
         grid-template-columns: repeat(2, 1fr);
         row-gap: 30px;
         column-gap: 30px;
@@ -27,15 +28,6 @@
 }
 
 @media screen and (max-width: 767px) {
-    .films {
-        max-width: 720;
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 30px;
-        column-gap: 30px;
-    }
-}
-
-@media screen and (max-width: 680px) {
     .films {
         max-width: 339px;
         grid-template-columns: repeat(1, 1fr);

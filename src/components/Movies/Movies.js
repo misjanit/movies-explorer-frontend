@@ -1,6 +1,6 @@
 import './Movies.css';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import filmTest from '../../images/film-test.svg';
+import filmTest from '../../images/film-test.png';
 
 const Movies = () => {
     const defaultMovies = [

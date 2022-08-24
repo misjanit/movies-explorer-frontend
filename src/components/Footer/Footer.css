@@ -20,7 +20,7 @@
     max-width: 1140px;
     width: calc(100% - 140px);
 
-    margin: 110px auto 20px auto;
+    margin: 80px auto 20px auto;
     padding: 0;
     padding-bottom: 23px;
 
@@ -54,7 +54,7 @@
     max-width: 1140px;
     width: calc(100% - 140px);
 
-    margin: 0px 70px 0px 70px;
+    margin: 0px 70px 20px 70px;
 
     justify-content: space-between;
 }

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Route, Switch } from "react-router-dom"
 
+import './App.css';
+
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
@@ -17,7 +19,7 @@ import SearchForm from '../SearchForm/SearchForm';
 import FilterCheckBox from '../FilterCheckBox/FilterCheckBox';
 
 import Movies from "../Movies/Movies";
-import MoviesCard from "../MoviesCard/MoviesCard";
+// import MoviesCard from "../MoviesCard/MoviesCard";
 import SavedMovies from "../SavedMovies/SavedMovies";
 
 import NotFound from '../NotFound/NotFound';
@@ -36,7 +38,6 @@ function App() {
         <div className="page">
                 <Switch>
                     <Route exact path='/' >
-                        <Header exact path='/' />
                         <Main>
                             <Promo />
                             <AboutProject />
@@ -47,7 +48,7 @@ function App() {
                         <Footer />
                     </Route>
 
-                    <Route exact path='movies'>
+                    <Route exact path='/movies'>
                         <Header exact path='/movies' />
                         <SearchForm />
                         <FilterCheckBox />
@@ -58,6 +59,7 @@ function App() {
                     <Route exact path='/saved-movies'>
                         <Header exact path='/saved-movies' />
                         <SearchForm />
+                        <FilterCheckBox />
                         <SavedMovies />
                         <Footer />
                     </Route>

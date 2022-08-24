@@ -25,9 +25,7 @@ const SearchForm = () => {
                     </button>
                 </form>
             </div>
-            <div className="searchform__more-wrapper">
-                <p className="searchform__more">Ещё</p>
-            </div>
+            
         </section>
     )
 }

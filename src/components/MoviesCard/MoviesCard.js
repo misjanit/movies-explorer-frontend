@@ -11,7 +11,7 @@ const MovieCard = ({ movie }) => {
                 alt={movie.alt} />
             <div className="film__description">
                 <p className="film__title">{movie.title}</p>
-                <button className="film__like-container">
+                <button className="film__like-container" type='button'>
                     <div
                         className={changeLikeButtonClass}
                         alt="Кнопка лайка" />

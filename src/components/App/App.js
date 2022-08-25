@@ -29,66 +29,71 @@ import Login from '../Login/Login';
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
-    
-      const onClick = (e) => {
+
+    const onClick = (e) => {
         if (e.target !== document.querySelector(".preloader__round")) setIsLoading(true);
-      };
+    };
 
     return (
         <div className="page">
-                <Switch>
-                    <Route exact path='/' >
-                        <Main>
-                            <Promo />
-                            <AboutProject />
-                            <Techs />
-                            <AboutMe />
-                            <Portfolio />
-                        </Main>
-                        <Footer />
-                    </Route>
+            <Switch>
+                <Route exact path='/' >
+                    <Header exact path='/' />
+                    <Main>
+                        <Promo />
+                        <AboutProject />
+                        <Techs />
+                        <AboutMe />
+                        <Portfolio />
+                    </Main>
+                    <Footer />
+                </Route>
 
-                    <Route exact path='/movies'>
-                        <Header exact path='/movies' />
+                <Route exact path='/movies'>
+                    <Header exact path='/movies' />
+                    <Main>
                         <SearchForm />
                         <FilterCheckBox />
                         <Movies />
-                        <Footer />
-                    </Route>
-
-                    <Route exact path='/saved-movies'>
-                        <Header exact path='/saved-movies' />
+                    </Main>
+                    <Footer />
+                </Route>
+                
+                <Route exact path='/saved-movies'>
+                    <Header exact path='/saved-movies' />
+                    <Main>
                         <SearchForm />
                         <FilterCheckBox />
                         <SavedMovies />
-                        <Footer />
-                    </Route>
+                    </Main>
+                    <Footer />
+                </Route>
 
-                    <Route exact path='/profile'>
-                        <Header exact path='/profile' />
-                        <Main>
-                            <Profile />
-                        </Main>
-                    </Route>
+                <Route exact path='/profile'>
+                    <Header exact path='/profile' />
+                    <Main>
+                        <Profile />
+                    </Main>
+                </Route>
 
-                    <Route path='/signin'>
-                        <Main>
-                                {isLoading ? <Login /> : <Preloader onClick={onClick} />}
-                        </Main>
-                    </Route>
+                <Route path='/signin'>
+                    <Main>
+                        {isLoading ? <Login /> : <Preloader onClick={onClick} />}
+                    </Main>
+                </Route>
 
-                    <Route exact path='/signup'>
-                        <Main>
-                                {isLoading ? <Register /> : <Preloader onClick={onClick} />}
-                        </Main>
-                    </Route>
+                <Route exact path='/signup'>
+                    <Main>
+                        {isLoading ? <Register /> : <Preloader onClick={onClick} />}
+                    </Main>
+                </Route>
 
-                    <Route path='/*'>
-                        <NotFound />
-                    </Route>
+                <Route path='/*'>
+                    <NotFound />
+                </Route>
 
-                </Switch>
-            </div>
+            </Switch>
+        </div>
     )
 }
 

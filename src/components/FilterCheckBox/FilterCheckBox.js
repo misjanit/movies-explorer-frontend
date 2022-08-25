@@ -14,7 +14,9 @@ const FilterCheckBox = (props) => {
         <section className="filter__shortfilms-container">
             <button
                 className={clicked ? 'filter__switch-btn' : 'filter__switch-btn filter__switch-on'}
-                onClick={handlerClass} />
+                onClick={handlerClass} 
+                type='button'
+                />
             <p className="filter__shortfilms-title">Короткометражки</p>
         </section> 
     )

@@ -39,12 +39,13 @@ const Register = (props) => {
                 <span className="register__error-message">Что-то пошло не так</span>
                 <button
                     className="register__submit-btn"
-                    disabled="isFormValid"
-                >Зарегистрироваться</button>
+                    disabled="isFormValid">
+                    Зарегистрироваться
+                </button>
             </form>
             <div className="register__login-container">
                 <h4 className="register__login-caption">Уже зарегистрированы?</h4>
-                <button className="register__login-btn">Войти</button>
+                <button className="register__login-btn" type='button'>Войти</button>
             </div>
         </section>
     )

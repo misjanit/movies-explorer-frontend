@@ -1,26 +1,13 @@
 import '../../vendor/normalize.css';
 import React from "react";
+import { Link } from "react-router-dom";
 import './Promo.css'
 
 const Promo = (props) => {
     return (
         <div className='promo__page'>
             <section className='promo__container'>
-                <header className='promo__header'>
-                    <img src={require("../../images/logo.svg").default}
-                        className='promo__logo'
-                        alt="Логотип"
-                        href="/"
-                    />
-                    <div className='promo__menu-container'>
-                        <button className='promo__register-btn'>
-                            Регистрация
-                        </button>
-                        <button className='promo__login-btn'>
-                            Войти
-                        </button>
-                    </div>
-                </header>
+                
                 <main className='promo__main'>
                     <div className='promo__title'>
                         <p className='promo__main-caption'>
@@ -36,7 +23,7 @@ const Promo = (props) => {
                         href="/" />
                 </main>
                 <footer className='promo__footer'>
-                    <button className='promo__footer-caption'>
+                    <button className='promo__footer-caption' type='button'>
                         Узнать больше
                     </button>
                 </footer>

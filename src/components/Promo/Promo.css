@@ -1,5 +1,8 @@
 .promo__page {
     width: 100%;
+    
+    margin: 0 auto;
+    padding: 0;
 
     background: #DDDEE3;
 
@@ -12,102 +15,32 @@
     flex-direction: column;
 
     max-width: 1280px;
-    width: 100%;
+    width: calc(100% - 140px);
 
     margin: 0 auto;
     padding: 0;
 }
 
-.promo__header {
-    display: flex;
-    flex-direction: row;
-
-    align-items: center;
-
-    max-width: 1140px;
-    width: calc(100% - 140px);
-    height: 74px;
-
-    margin: 0 auto 50px auto;
-    padding: 0;
-}
-
-@media screen and (max-width: 768px) {
-    .promo__header {
+@media screen and (max-width: 1000px) {
+    .promo__container {
         width: calc(100% - 60px);
     }
 }
 
-@media screen and (max-width: 380px) {
-    .promo__header {
+@media screen and (max-width: 390px) {
+    .promo__container {
         width: calc(100% - 28px);
     }
 }
 
-.promo__logo {
-    display: inline-block;
-
-    max-width: 38px;
-    width: 100%;
-    height: 38px;
-
-    margin: 0 auto 0 0px;
-    padding: 0;
-}
-
-.promo__menu-container {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-
-    align-items: center;
-    justify-content: end;
-
-    margin: 0 0 0 auto;
-    padding: 0;
-}
-
-.promo__register-btn {
-    max-width: 77px;
-
-    width: 100%;
-    height: 16px;
-
-    margin: auto 30px auto 0;
-    padding: 0;
-
-    background-color: transparent;
-    border: none;
-
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-}
-
-.promo__login-btn {
-    max-width: 76px;
-    width: 100%;
-    height: 32px;
-
-    margin: auto 0 auto 0;
-    padding: 0;
-
-    background-color: #3456f3;
-    color: white;
-
-    border-radius: 3px;
-    border: none;
-
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-}
-
 .promo__main {
+    max-width: 1140px;
+    width: 100%;
+
     display: flex;
     flex-direction: row;
 
-    margin: 75px 70px 0 70px;
+    margin: 75px auto 0 auto;
     padding: 0;
 }
 
@@ -173,7 +106,6 @@
 
 @media screen and (max-width: 600px) {
     .promo__main-caption {
-        width: calc(100% - 60px);
         font-size: 30px;
         line-height: 40px;
     }
@@ -181,8 +113,6 @@
 
 @media screen and (max-width: 380px) {
     .promo__main-caption {
-        width: calc(100% - 20px);
-
         font-weight: 400;
         font-size: 30px;
         line-height: 38px;
@@ -195,7 +125,7 @@
     max-width: 310px;
     width: 100%;
 
-    margin: 36px auto auto 0;
+    margin: 36px auto 146px 0;
     padding: 0;
 
     font-weight: 400;
@@ -235,19 +165,29 @@
     }
 }
 
+@media screen and (max-width: 390px) {
+    .promo__landing-logo {
+        max-width: 210px;
+        height: 206px;
+    }
+}
+
 .promo__footer {
+    max-width: 1140px;
+    width: 100%;
     display: flex;
     flex-direction: row;
 
     align-items: center;
     justify-content: flex-start;
 
-    margin: auto 70px 25px 70px;
+    margin: 0 auto 75px auto;
 }
 
 @media screen and (max-width: 1000px) {
     .promo__footer {
         margin: 0 auto 76px auto;
+        justify-content: center;
     }
 }
 

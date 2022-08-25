@@ -30,12 +30,13 @@ const Login = (props) => {
                 <span className="login__error-message">Что-то пошло не так</span>
                 <button
                     className="login__submit-btn"
-                    disabled="isFormValid"
-                >Войти</button>
+                    disabled="isFormValid">
+                    Войти
+                </button>
             </form>
             <div className="login__login-container">
                 <h4 className="login__login-caption">Еще не зарегистрированы?</h4>
-                <button className="login__login-btn">Регистрация</button>
+                <button className="login__login-btn" type='button'>Регистрация</button>
             </div>
         </section>
     )

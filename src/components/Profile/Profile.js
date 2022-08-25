@@ -18,8 +18,8 @@ const Profile = (props) => {
                 </div>
             </main>
             <footer className="profile__control-menu">
-                <button className="profile__edit-profile-btn">Редактировать</button>
-                <button className="profile__logout-btn">Выйти из аккаунта</button>
+                <button className="profile__edit-profile-btn" type='button'>Редактировать</button>
+                <button className="profile__logout-btn" type='button'>Выйти из аккаунта</button>
             </footer>
         </section>
     )

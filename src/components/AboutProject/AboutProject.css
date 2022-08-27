@@ -1,0 +1,331 @@
+.aboutproject__container {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto 110px auto;
+
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.aboutproject__header {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.aboutproject__title {
+    max-width: 1140px;
+    width: calc(100% - 100px);
+
+    margin: 110px 70px 70px 70px;
+    padding: 0;
+    padding-bottom: 23px;
+
+    border-bottom: 1px solid black;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 550px) {
+    .aboutproject__title {
+        width: calc(100% - 36px);
+        margin: 70px 18px 60px 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+.aboutproject__main {
+    display: flex;
+    flex-direction: row;
+
+    max-width: 1140px;
+    width: calc(100% - 140px);
+
+    margin: 0 70px 0 70px;
+    align-self: center;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutproject__main {
+        max-width: 668px;
+        width: calc(100% - 100px);
+        margin: 0 50px 0 50px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .aboutproject__main {
+        flex-direction: column;
+        width: calc(100% - 36px);
+        margin: 0 18px 0 18px;
+    }
+}
+
+.aboutproject__stages {
+    display: block;
+    margin: 0 30px 0 0;
+}
+
+@media screen and (max-width: 550px) {
+    .aboutproject__stages {
+        margin: 0;
+    }
+}
+
+.aboutproject__diploma-stages {
+    max-width: 550px;
+    width: 100%;
+
+    margin: 0 20px 26px auto;
+    padding: 0;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__diploma-stages {
+        margin: 0 0 16px auto;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+.aboutproject__description {
+    max-width: 550px;
+    width: 100%;
+
+    margin: 0 20px 110px 0;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@media screen and (max-width: 550px) {
+    .aboutproject__description {
+        margin: 0 auto 56px auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__description {
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
+
+.aboutproject__diploma-weeks {
+    max-width: 550px;
+    width: 100%;
+
+    margin: 0 0 26px auto;
+    padding: 0;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__diploma-weeks {
+        margin: 0 0 16px auto;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+}
+
+.aboutproject__deadlines {
+    max-width: 550px;
+    width: 100%;
+
+    margin: 0 0 110px auto;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@media screen and (max-width: 550px) {
+    .aboutproject__deadlines {
+        margin: 0 0 60px auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__deadlines {
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
+
+/* Нижняя часть */
+
+.aboutproject__stages-container {
+    max-width: 1140px;
+    width: calc(100% - 140px);
+
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 70px 0 70px;
+    align-self: center;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutproject__stages-container {
+        max-width: 668px;
+        width: calc(100% - 100px);
+
+        margin: 0 50px 0 50px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .aboutproject__stages-container {
+        width: calc(100% - 36px);
+        margin: 0 18px 0 18px;
+    }
+}
+
+.aboutproject__backend-container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 228px;
+    width: 100%;
+    height: 72;
+    margin: 0;
+}
+
+.aboutproject__backend-week {
+    height: 26px;
+    padding-top: 10px;
+    margin: 0;
+
+    background-color: #3456F3;
+    color: white;
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+    .aboutproject__backend-week {
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__backend-week {
+        height: 23px;
+        padding-top: 12px;
+
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+    }
+}
+
+.aboutproject__backend-caption {
+    max-width: 228px;
+    width: 100%;
+
+    padding: 0;
+    margin: 14px 0 0 0;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+
+    color: #A0A0A0;
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__backend-caption {
+        margin: 10px 0 0 0;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+    }
+}
+
+.aboutproject__frontend-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 912px;
+    height: 32;
+    margin: 0;
+}
+
+.aboutproject__frotend-week {
+    max-width: 912px;
+    height: 26px;
+
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    background-color: #F2F2F2;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__frotend-week {
+        height: 23px;
+        padding-top: 12px;
+
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+    }
+}
+
+.aboutproject__frontend-caption {
+
+    padding: 0;
+    margin: 14px 0 0 0;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+
+    color: #A0A0A0;
+}
+
+@media screen and (max-width: 400px) {
+    .aboutproject__frontend-caption {
+        margin: 10px 0 0 0;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+    }
+}

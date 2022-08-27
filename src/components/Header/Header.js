@@ -96,8 +96,8 @@ const Header = ({ path = '/' }) => {
                 </header>
             </section>
 
-            <section className='promo__header-container'>
-                <header className={loggedIn ? 'promo__header' : 'promo__header_none'}>
+            <header className='promo__header-container'>
+                <div className={loggedIn ? 'promo__header' : 'promo__header_none'}>
                     <Link to='/'>
                         <img src={require("../../images/logo.svg").default}
                             className='promo__logo'
@@ -113,8 +113,8 @@ const Header = ({ path = '/' }) => {
                             Войти
                         </Link>
                     </div>
-                </header>
-            </section>
+                </div>
+            </header>
         </>
     )
 }

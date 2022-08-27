@@ -1,4 +1,4 @@
-.portfolio__container {
+.portfolio {
     display: flex;
     flex-direction: column;
 
@@ -12,13 +12,13 @@
 }
 
 @media screen and (max-width: 640px) {
-    .portfolio__container {
+    .portfolio {
         width: calc(100% - 80px);
     }
 }
 
 @media screen and (max-width: 400px) {
-    .portfolio__container {
+    .portfolio {
         width: calc(100% - 36px);
     }
 }
@@ -32,49 +32,54 @@
     color: #A0A0A0;
 }
 
-.portfolio__wrapper {
+.portfolio__list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
-    justify-content: space-between;
-
-    margin: 20px 0 0 0;
-    padding-bottom: 19px;
-
-    border-bottom: 1px solid #E8E8E8;
+    padding: 0;
+    
     text-decoration: none;
     color: black;
 }
 
-.portfolio__wrapper:last-child {
+.portfolio__list:last-child {
     margin: 20px 0 90px 0;
 }
 
-.portfolio__link-arrow {}
+.portfolio__item {
+    display: flex;
+    flex-direction: row;
 
-.portfolio__static-site {
+    width: 100%;
+
+    background-image: url(../../images/link-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+
     margin: 0;
     padding: 0;
+    padding-top: 20px;
+    padding-bottom: 19px;
 
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 50px;
-    letter-spacing: -0.04em;
+    justify-content: space-between;
+    list-style-type: none;
+
+    cursor: pointer;
+    border-bottom: 1px solid #E8E8E8;
 }
 
-.portfolio__adaptive-site {
-    margin: 0;
-    padding: 0;
-
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 50px;
-    letter-spacing: -0.04em;
+@media screen and (max-width: 520px) {
+    .portfolio__item {
+        background-size: 14px;
+    }
 }
 
-.portfolio__app {
+.portfolio__link {
     margin: 0;
     padding: 0;
+
+    text-decoration: none;
+    color: black;
 
     font-weight: 400;
     font-size: 30px;
@@ -83,25 +88,19 @@
 }
 
 @media screen and (max-width: 768px) {
-    .portfolio__static-site,
-    .portfolio__adaptive-site,
-    .portfolio__app {
+    .portfolio__link {
         font-size: 28px;
     }
 }
 
 @media screen and (max-width: 640px) {
-    .portfolio__static-site,
-    .portfolio__adaptive-site,
-    .portfolio__app {
+    .portfolio__link {
         font-size: 24px;
     }
 }
 
 @media screen and (max-width: 520px) {
-    .portfolio__static-site,
-    .portfolio__adaptive-site,
-    .portfolio__app {
+    .portfolio__link {
         font-size: 18px;
     }
 }

@@ -10,6 +10,12 @@
     font-style: normal;
 }
 
+@media screen and (max-width: 390px) {
+    .techs__container {
+        background-color: white;
+    }
+}
+
 .techs__header {
     display: flex;
     flex-direction: column;

@@ -4,30 +4,31 @@ import '../../vendor/normalize.css';
 
 const Portfolio = (props) => {
     return (
-        <section className='portfolio__container'>
+        <section className='portfolio'>
             <p className="portfolio__caption">Портфолио</p>
-            <a href='https://github.com/misjanit/how-to-learn'
-                className="portfolio__wrapper">
-                <p className="portfolio__static-site">Статичный сайт</p>
-                <img src={require("../../images/link-arrow.svg").default}
-                    className="portfolio__link-arrow"
-                    alt="Перейти по ссылке"
-                    href="/" />
-            </a>
-            <a href='https://github.com/misjanit/russian-travel' className="portfolio__wrapper">
-                <p className="portfolio__adaptive-site">Адаптивный сайт</p>
-                <img src={require("../../images/link-arrow.svg").default}
-                    className="portfolio__link-arrow"
-                    alt="Перейти по ссылке"
-                    href="/" />
-            </a>
-            <a href='https://github.com/misjanit/react-mesto-api-full' className="portfolio__wrapper">
-                <p className="portfolio__app">Одностраничное приложение</p>
-                <img src={require("../../images/link-arrow.svg").default}
-                    className="portfolio__link-arrow"
-                    alt="Перейти по ссылке"
-                    href="/" />
-            </a>
+            <ul className='portfolio__list'>
+                <li className="portfolio__item" alt='Перейти по ссылке'>
+                    <a className='portfolio__link'
+                        href='https://github.com/misjanit/how-to-learn'
+                        target='_blank' rel='noreferrer'>
+                        Статичный сайт
+                    </a>
+                </li>
+                <li className="portfolio__item" alt='Перейти по ссылке'>
+                    <a className='portfolio__link'
+                        href='https://github.com/misjanit/russian-travel'
+                        target='_blank' rel='noreferrer'>
+                        Адаптивный сайт
+                    </a>
+                </li>
+                <li className="portfolio__item" alt='Перейти по ссылке'>
+                    <a className='portfolio__link'
+                        href='https://github.com/misjanit/react-mesto-api-full'
+                        target='_blank' rel='noreferrer'>
+                        Одностраничное приложение
+                    </a>
+                </li>
+            </ul>
         </section>
     )
 }

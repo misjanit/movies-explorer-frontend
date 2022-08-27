@@ -8,7 +8,7 @@ const MovieCard = ({ movie }) => {
         <div className="film__container">
             <img src={movie.image}
                 className="film__image"
-                alt={movie.alt} />
+                alt={movie.title} />
             <div className="film__description">
                 <p className="film__title">{movie.title}</p>
                 <button className="film__like-container" type='button'>

@@ -13,12 +13,11 @@ const SearchForm = () => {
                         className="searchform__loupe"
                         alt="Значок поиска" />
                 </div>
-                <form
-                    className="searchform__form"
-                    required>
+                <form className="searchform__form">
                     <input
                         className="searchform__input"
-                        placeholder="Фильм" />
+                        placeholder="Фильм"
+                        required />
                     <button className="searchform__loupe-btn" type='submit'>
                         <img src={require("../../images/loupe-white.svg").default}
                             className="searchform__loupe-btn-img"

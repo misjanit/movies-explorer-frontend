@@ -1,65 +1,112 @@
-import './Movies.css';
+import { useEffect, useState } from 'react';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import filmTest from '../../images/film-test.png';
+import * as moviesApi from '../../utils/MoviesApi';
+import { useMoviesSearch } from '../../utils/moviesSearch';
+import './Movies.css';
+import Preloader from '../Preloader/Preloader';
+import SearchForm from '../SearchForm/SearchForm';
+import FilterCheckBox from '../FilterCheckBox/FilterCheckBox';
 
-const Movies = () => {
-    const defaultMovies = [
-        {
-            image: filmTest,
-            title: "33 слова о дизайне",
-            time: "1ч 42м",
-            _id: 1,
-            like: true,
-        },
-        {
-            image: filmTest,
-            title: "Киноальманах «100 лет дизайна»",
-            time: "1ч 42м",
-            _id: 2,
-            like: true,
-        },
-        {
-            image: filmTest,
-            title: "В погоне за Бенкси",
-            time: "1ч 42м",
-            _id: 3,
-            like: false,
-        },
-        {
-            image: filmTest,
-            title: "Баския: Взрыв реальности",
-            time: "1ч 42м",
-            _id: 4,
-            like: false,
-        },
-        {
-            image: filmTest,
-            title: "Бег это свобода",
-            time: "1ч 42м",
-            _id: 5,
-            like: true,
-        },
-        {
-            image: filmTest,
-            title: "Книготорговцы",
-            time: "1ч 42м",
-            _id: 6,
-            like: false,
-        },
-        {
-            image: filmTest,
-            title: "Когда я думаю о Германии ночью",
-            time: "1ч 42м",
-            _id: 7,
-            like: false,
-        },
-    ];
+const Movies = ({
+    onLikeClick,
+    onDislikeClick,
+    getMoreMovies,
+    moviesListLength,
+    savedMovies
+}) => {
+
+    const [movies, setMovies] = useState(JSON.parse(localStorage.getItem('movies')) ?? []);
+    const [localShortCheck, setLocalShortCheck] = useState(JSON.parse(localStorage.getItem('movies-check')) || false);
+    const [localSearchValue, setLocalValue] = useState(localStorage.getItem('movies-search-value') || ' ');
+    const [isLoading, setIsLoading] = useState(false);
+    const [pretext, setPretext] = useState('Фильм');
+
+    const filteredMovies = useMoviesSearch(movies, localShortCheck, localSearchValue);
+    const [localMovies, setLocalMovies] = useState(JSON.parse(localStorage.getItem('filtered-movies')) ?? filteredMovies);
+
+    function prealoderActivity() {
+        setIsLoading(true)
+        setTimeout(() =>
+            setIsLoading(false), 300);
+    };
+
+    function handleMovieSearch(value) {
+        prealoderActivity();
+        if (movies.length === 0) {
+            getMovies();
+        };
+
+        localStorage.setItem('movies-search-value', value);
+        setLocalValue(value);
+    };
+
+    function getMovies() {
+        prealoderActivity();
+        moviesApi.getMovies()
+            .then(moviesList => {
+                if (moviesList.length) {
+                    localStorage.setItem('movies', JSON.stringify(moviesList));
+                    setMovies(moviesList);
+                }
+            })
+            .catch(() => setPretext('Произошла ошибка'))
+            .finally(() => setIsLoading(false))
+    };
+
+    function handleClickOnShorts(checked) {
+        localStorage.setItem('movies-check', checked);
+        setLocalShortCheck(checked);
+    };
+
+    useEffect(() => {
+        if (localMovies !== filteredMovies) {
+            localStorage.setItem('filtered-movies', JSON.stringify(filteredMovies));
+            setLocalMovies(filteredMovies);
+        }
+    }, [filteredMovies, localMovies]);
+
+    useEffect(() => {
+        if (movies.length && !filteredMovies.length) {
+            setPretext('Ничего не найдено');
+        }
+    }, [movies.length, filteredMovies.length]);
 
     return (
-        <section className='movies'>
-            <MoviesCardList movies={defaultMovies} />
-        </section>
+        <>
+            <SearchForm
+                handleSearch={handleMovieSearch}
+                defaultValue={localSearchValue}
+            />
+
+            <FilterCheckBox
+                onCheckChange={handleClickOnShorts}
+                defaultChecked={localShortCheck}
+                disabledCheck={!localSearchValue}
+            />
+
+            <section className='movies'>
+                {isLoading
+                    ? <Preloader />
+                    : (<MoviesCardList
+                        movies={localMovies}
+                        onLikeClick={onLikeClick}
+                        onDislikeClick={onDislikeClick}
+                        savedMovies={savedMovies}
+                        moviesListLength={moviesListLength} />)
+                }
+                {filteredMovies.length === 0 ? <p className='movies__notfound-text'>{pretext}</p> :
+                    filteredMovies.length > moviesListLength &&
+                    <button
+                        type='button'
+                        className="more__btn"
+                        onClick={getMoreMovies}
+                    >
+                        Ещё
+                    </button>
+                }
+            </section>
+        </>
     )
-}
+};
 
 export default Movies;

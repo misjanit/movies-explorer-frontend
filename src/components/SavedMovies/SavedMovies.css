@@ -15,3 +15,14 @@
         width: calc(100% - 20px);
     }
 }
+
+.movies__notfound-text {
+    display: block;
+    margin: 0 auto 30vh auto;
+
+    text-align: center;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+}

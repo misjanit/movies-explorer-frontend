@@ -1,37 +1,74 @@
-import './SavedMovies.css';
+import { useState, useEffect } from 'react';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import filmTest from '../../images/film-test.png';
+import SearchForm from '../SearchForm/SearchForm';
+import Preloader from '../Preloader/Preloader';
+import FilterCheckBox from '../FilterCheckBox/FilterCheckBox';
+import { useMoviesSearch } from '../../utils/moviesSearch';
+import './SavedMovies.css';
 
-const savedMovies = [
-    {
-      image: filmTest,
-      title: "33 слова о дизайне",
-      time: "1ч 42м",
-      _id: 1,
-      saved: true,
-    },
-    {
-      image: filmTest,
-      title: "Киноальманах «100 лет дизайна»",
-      time: "1ч 42м",
-      _id: 2,
-      saved: true,
-    },
-    {
-      image: filmTest,
-      title: "В погоне за Бенкси",
-      time: "1ч 42м",
-      _id: 3,
-      saved: true,
-    },
-  ];
+const SavedMovies = ({
+  movies,
+  onDislikeClick
+}) => {
 
-const SavedMovies = () => {
-    return (
-        <section className='movies'>
-            <MoviesCardList movies={savedMovies} />
-        </section>
-    )
-}
+  const [localShortCheck, setLocaShortlCheck] = useState(JSON.parse(localStorage.getItem('saved-movies-check')) || false);
+  const [localSearchValue, setLocalValue] = useState(localStorage.getItem('saved-movies-search-value') || ' ');
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const filteredMovies = useMoviesSearch(movies, localShortCheck, localSearchValue);
+  const [localSavedMovies, setLocalSavedMovies] = useState(JSON.parse(localStorage.getItem('filtered-movies')) ?? filteredMovies);
+
+  function prealoderActivity() {
+    setIsLoading(true)
+    setTimeout(() =>
+      setIsLoading(false), 300);
+  };
+
+  function handleMovieSearch(value) {
+    prealoderActivity()
+    localStorage.setItem('saved-movies-search-value', value);
+    setLocalValue(value);
+  };
+
+  function handleClickOnShorts(checked) {
+    localStorage.setItem('saved-movies-check', checked);
+    setLocaShortlCheck(checked);
+  };
+
+  useEffect(() => {
+    if (localSavedMovies !== filteredMovies) {
+      localStorage.setItem('filtered-saved-movies', JSON.stringify(filteredMovies));
+      setLocalSavedMovies(filteredMovies);
+    }
+  }, [filteredMovies, localSavedMovies]);
+
+  return (
+    <>
+      <SearchForm
+        handleSearch={handleMovieSearch}
+        initialValue={localSearchValue}
+      />
+      <FilterCheckBox
+        onCheckChange={handleClickOnShorts}
+        initialChecked={localShortCheck}
+        disabledCheck={!localSearchValue}
+      />
+      <section className='movies'>
+        {isLoading
+          ? <Preloader />
+          : <MoviesCardList
+            movies={localSavedMovies}
+            onDislikeClick={onDislikeClick}
+          />
+        }
+        {filteredMovies.length === 0
+          ? isLoading ? null : <p className='movies__notfound-text'>Ничего не найдено</p>
+          : null
+        }
+      </section>
+    </>
+  )
+};
 
 export default SavedMovies;

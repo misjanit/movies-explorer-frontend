@@ -1,17 +1,28 @@
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
 
-const MoviesCardList = ({ movies }) => {
+const MoviesCardList = ({
+    movies,
+    onLikeClick,
+    onDislikeClick,
+    moviesListLength,
+    savedMovies
+}) => {
+
     return (
         <>
             <div className='films'>
                 {movies.map((movie) => (
-                    <MoviesCard key={movie._id} movie={movie} saved={false} />
-                ))}
+                    <MoviesCard
+                        movie={movie}
+                        key={movie.id ? movie.id : movie.movieId}
+                        onLikeClick={onLikeClick}
+                        onDislikeClick={onDislikeClick}
+                        savedMovies={savedMovies}
+                    />
+                )).slice(0, moviesListLength)}
             </div>
-            <div className="more__wrapper">
-                <p className="more__caption">Ещё</p>
-            </div>
+
         </>
     )
 }

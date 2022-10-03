@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './Header.css';
 import '../../vendor/normalize.css';
 
-const Header = ({ path = '/' }) => {
+const Header = ({ path = '' , isLoggedIn}) => {
     const isHomepage = path === "/";
 
     const [clicked, setClicked] = useState(true);
@@ -13,19 +13,9 @@ const Header = ({ path = '/' }) => {
         else setClicked(false);
     }
 
-    const [loggedIn, setLoggedIn] = useState(false)
-
-
-    function isLogin() {
-        if (loggedIn) setLoggedIn(true);
-        else setLoggedIn(false);
-    }
-
     return (
-
         <>
-            {/* <>({clicked ? 'header__container' : 'header__container-active-menu'})</> */}
-            <section className={`header__container ${isHomepage ? 'header__container_background' : ''} ${loggedIn && 'header__container_none'} ${clicked ? 'header__container' : 'header__container-active-menu'}`}>
+            <section className={`header__container ${isHomepage ? 'header__container_background' : ''} ${isLoggedIn ? '' : 'header__container_none'} ${clicked ? 'header__container' : 'header__container-active-menu'}`}>
                 <header className="header__main">
                     <Link to='/'>
                         <img src={require("../../images/logo.svg").default}
@@ -97,7 +87,7 @@ const Header = ({ path = '/' }) => {
             </section>
 
             <header className='promo__header-container'>
-                <div className={loggedIn ? 'promo__header' : 'promo__header_none'}>
+                <div className={isLoggedIn ? 'promo__header_none' : 'promo__header'}>
                     <Link to='/'>
                         <img src={require("../../images/logo.svg").default}
                             className='promo__logo'
@@ -109,7 +99,7 @@ const Header = ({ path = '/' }) => {
                         <Link to="/signup" className="promo__register-btn">
                             Регистрация
                         </Link>
-                        <Link to="/signup" className="promo__login-btn">
+                        <Link to="/signin" className="promo__login-btn">
                             Войти
                         </Link>
                     </div>

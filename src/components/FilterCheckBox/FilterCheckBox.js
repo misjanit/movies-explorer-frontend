@@ -1,24 +1,31 @@
-import React, { useState } from "react";
 import './FilterCheckBox.css';
 import '../../vendor/normalize.css';
 
-const FilterCheckBox = (props) => {
-    const [clicked, setClicked] = useState(true);
+const FilterCheckBox = ({
+    onCheckChange,
+    defaultChecked,
+    disabledCheck
+}) => {
 
-    function handlerClass() {
-        if (!clicked) setClicked(true);
-        else setClicked(false);
+    function handleChange(evt) {
+        onCheckChange(evt.target.checked)
     }
 
     return (
         <section className="filter__shortfilms-container">
-            <button
-                className={clicked ? 'filter__switch-btn' : 'filter__switch-btn filter__switch-on'}
-                onClick={handlerClass} 
-                type='button'
+            <label className='filter__checkbox'>
+                <input
+                    id='checkbox'
+                    onChange={handleChange}
+                    form='search-form'
+                    type='checkbox'
+                    defaultChecked={defaultChecked}
+                    disabled={disabledCheck}
                 />
+                <span className='filter__checkbox-switch'></span>
+            </label>
             <p className="filter__shortfilms-title">Короткометражки</p>
-        </section> 
+        </section>
     )
 }
 

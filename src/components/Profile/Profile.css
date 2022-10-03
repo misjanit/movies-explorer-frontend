@@ -32,7 +32,7 @@
     max-width: 410px;
     width: 100%;
 
-    margin: 0 auto 220px auto;
+    margin: 0 auto 0 auto;
     padding: 0;
 }
 
@@ -67,13 +67,16 @@
 .profile__username-wrapper {
     display: flex;
     flex-direction: row;
+    position: relative;
 
     height: 14px;
 
     align-items: center;
 
-    margin: 0 0 16px 0;
+    margin: 0;
     padding: 0;
+    padding-bottom: 16px;
+    overflow: hidden;
 }
 
 .profile__username {
@@ -89,6 +92,10 @@
     margin: 0 0 0 auto;
     padding: 0;
 
+    border: none;
+    outline: none;
+
+    background: transparent;
     font-weight: 400;
     font-size: 11px;
     line-height: 13px;
@@ -105,14 +112,38 @@
     padding: 0;
 }
 
+.profile__error-message {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+    color: red;
+
+    text-align: right;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.profile__error-message_unactive {
+    display: none;
+}
+
 .profile__email-wrapper {
     display: flex;
     flex-direction: row;
+    position: relative;
 
     align-items: center;
 
     margin: 17px 0 0 0;
     padding: 0;
+    padding-bottom: 22px;
+    overflow: hidden;
 }
 
 .profile__email {
@@ -128,6 +159,10 @@
     margin: 0 0 0 auto;
     padding: 0;
 
+    border: none;
+    outline: none;
+
+    background: transparent;
     font-weight: 400;
     font-size: 11px;
     line-height: 13px;
@@ -141,15 +176,15 @@
     max-width: 410px;
     width: 100%;
 
-    margin: auto auto 70px auto;
+    margin: 0 auto auto auto;
     padding: 0;
 }
 
 .profile__edit-profile-btn {
-    width: calc(100% - 20px);
+    width: 100%;
     height: 16px;
 
-    margin: 0 auto 16px auto;
+    margin: 210px auto 16px auto;
     padding: 0;
 
     border: none;
@@ -161,10 +196,32 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
+    transition: all .3s ease;
+}
+
+.profile__edit-profile-btn-active {
+    width: 100%;
+    height: 45px;
+    border: none;
+
+    margin: 210px auto 16px auto;
+    padding: 0;
+
+    color: white;
+    background: #3456F3;
+    border: none;
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    transition: all .3s ease;
 }
 
 .profile__logout-btn {
-    max-width: 410px;
     width: 100%;
     height: 16px;
 

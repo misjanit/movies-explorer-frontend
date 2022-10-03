@@ -1,6 +1,11 @@
-.searchform__container {
+.searchform {
+    display: flex;
+    position: relative;
+    flex-direction: column;
     font-family: 'Inter';
     font-style: normal;
+
+    padding-bottom: 20px;
 }
 
 .searchform__search-container {
@@ -78,7 +83,7 @@
     border: none;
     outline: none;
 
-    color: #A0A0A0;
+    color: black;
     font-weight: 500;
     font-size: 28px;
     line-height: 34px;
@@ -134,5 +139,20 @@
     padding: 0;
 }
 
-/* Кнопка еще */
+.searchform__error-message {
+    display: inline;
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    top: 130px;
+
+    text-align: center;
+    color: red;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.searchform__error-message_unactive {
+    display: none;
+}
 

@@ -19,10 +19,11 @@ const Movies = ({
     const [localShortCheck, setLocalShortCheck] = useState(JSON.parse(localStorage.getItem('movies-check')) || false);
     const [localSearchValue, setLocalValue] = useState(localStorage.getItem('movies-search-value') || ' ');
     const [isLoading, setIsLoading] = useState(false);
-    const [pretext, setPretext] = useState('Фильм');
 
     const filteredMovies = useMoviesSearch(movies, localShortCheck, localSearchValue);
     const [localMovies, setLocalMovies] = useState(JSON.parse(localStorage.getItem('filtered-movies')) ?? filteredMovies);
+
+    const [errorText, setErrorText] = useState('Введите название фильма')
 
     function prealoderActivity() {
         setIsLoading(true)
@@ -49,7 +50,7 @@ const Movies = ({
                     setMovies(moviesList);
                 }
             })
-            .catch(() => setPretext('Произошла ошибка'))
+            .catch(() => setErrorText('Произошла ошибка'))
             .finally(() => setIsLoading(false))
     };
 
@@ -66,8 +67,8 @@ const Movies = ({
     }, [filteredMovies, localMovies]);
 
     useEffect(() => {
-        if (movies.length && !filteredMovies.length) {
-            setPretext('Ничего не найдено');
+        if (movies.length && !filteredMovies.length === 0) {
+            setErrorText('Ничего не найдено');
         }
     }, [movies.length, filteredMovies.length]);
 
@@ -94,7 +95,7 @@ const Movies = ({
                         savedMovies={savedMovies}
                         moviesListLength={moviesListLength} />)
                 }
-                {filteredMovies.length === 0 ? <p className='movies__notfound-text'>{pretext}</p> :
+                {filteredMovies.length === 0 ? <p className='movies__notfound-text'>{ errorText }</p> :
                     filteredMovies.length > moviesListLength &&
                     <button
                         type='button'

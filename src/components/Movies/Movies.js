@@ -67,7 +67,7 @@ const Movies = ({
     }, [filteredMovies, localMovies]);
 
     useEffect(() => {
-        if (movies.length && !filteredMovies.length === 0) {
+        if (movies.length && !filteredMovies.length) {
             setErrorText('Ничего не найдено');
         }
     }, [movies.length, filteredMovies.length]);

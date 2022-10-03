@@ -112,7 +112,7 @@ class Api {
 
 const mainApi = new Api({
     baseUrl: `${window.location.protocol}//kinosite.api.nomoredomains.xyz`,
-    // baseUrl: `http://localhost:3000`,
+    //baseUrl: `http://localhost:3000`,
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',

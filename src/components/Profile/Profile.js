@@ -3,10 +3,16 @@ import './Profile.css';
 import '../../vendor/normalize.css';
 import useFormValidity from "../../utils/useForms";
 
-const Profile = ({ onEditProfile, onSignOut, isLoading, currentUser }) => {
+const Profile = ({ onEditProfile, onSignOut, currentUser }) => {
 
-    const { values, setValues, errors, handleChange } = useFormValidity();
+    const { values, setValues, errors, handleChange, isValid } = useFormValidity();
     const [isClickedOnEditBtn, setIsClickedOnEditBtn] = useState(false);
+    const [isChanged, setIsChanged] = useState(true);
+
+    useEffect(() => {
+        const wasInputChanged = values.name === currentUser.name && values.email === currentUser.email;
+        setIsChanged(wasInputChanged);
+    }, [values, currentUser])
 
     function handleClickedOnEditBtn(evt) {
         evt.preventDefault();
@@ -75,7 +81,10 @@ const Profile = ({ onEditProfile, onSignOut, isLoading, currentUser }) => {
                         </span>
                     </label>
                     {isClickedOnEditBtn
-                        ? (<button className="profile__edit-profile-btn-active" type='submit'>Сохранить</button>)
+                        ? (<button
+                            className={!isValid || isChanged ? 'profile__edit-profile-btn-not-active' : "profile__edit-profile-btn-active"}
+                            disabled={!isValid || isChanged}
+                            type='submit'>Сохранить</button>)
                         : (<button className="profile__edit-profile-btn" type='button' onClick={handleClickedOnEditBtn}>Редактировать</button>)
                     }
                 </form>

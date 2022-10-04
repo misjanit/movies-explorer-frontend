@@ -49,7 +49,7 @@ const MovieCard = ({
                     }>
                     <div
                         className={savedPage
-                            ? 'film__liked'
+                            ? 'film__delete-from-favourite'
                             : savedMovies.some((m) => m.movieId === movie.id)
                                 ? 'film__liked'
                                 : 'film__unliked'

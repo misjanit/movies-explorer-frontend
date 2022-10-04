@@ -35,8 +35,6 @@ const SearchForm = ({
                             placeholder='Фильм'
                             defaultValue={defaultValue}
                             onChange={handleChange}
-                            minLength='1'
-                            required
                             pattern="^[A-Za-zА-Яа-яЁё0-9-\s]+$"
                         />
                         <button className="searchform__loupe-btn" type='submit'>

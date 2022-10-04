@@ -27,15 +27,17 @@ const Login = ({ onLogin }) => {
             {isLoading
                 ? <Preloader />
                 : <section className="login__container">
-                    <img src={require("../../images/logo.svg").default}
-                        className="login__logo"
-                        alt="Логотип"
-                        href="/"
-                    />
+                    <Link to='/'>
+                        <img src={require("../../images/logo.svg").default}
+                            className="login__logo"
+                            alt="Логотип"
+                            href="/"
+                        />
+                    </Link>
                     <div className="login__top">
                         <h3 className="login__title">Рады видеть</h3>
                     </div>
-                    <form className="login__form" onSubmit={formSubmit} errors={errors}>
+                    <form className="login__form" isValid={isValid} onSubmit={formSubmit} errors={errors}>
                         <label className="login__input-container">
                             <p className="login__input-caption">E-mail</p>
                             <input

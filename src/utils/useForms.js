@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import validator from "validator"
 
 export default function useFormValidity(defaultValues = {}) {
 
@@ -8,19 +9,17 @@ export default function useFormValidity(defaultValues = {}) {
 
   localStorage.setItem('formState', isValid);
 
-  const handleChange = useCallback(
-    (evt) => {
+  const handleChange = (evt) => {
     const input = evt.target;
-    const { name } = input;
-    const { value } = input;
+    const name = input.name;
+    const value = input.value;
     const error = input.validationMessage;
-    const isFormValid = input.closest('form').checkValidity();
 
     setValues((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    
+
     setErrors((prevState) => ({
       ...prevState,
       [name]: error,
@@ -31,9 +30,33 @@ export default function useFormValidity(defaultValues = {}) {
       [name]: error,
     }));
 
-    setIsValid(isFormValid)
-  }, [setValues],
-  )
+    if (input.name !== "email") {
+      setValues({ ...values, [name]: value });
+      setErrors({ ...errors, [name]: input.validationMessage });
+      setIsValid(input.closest('form').checkValidity());
+    } else {
+      setValues({ ...values, [name]: value });
+
+      if (!validator.isEmail(input.value)) {
+        setErrors({
+          ...errors, [name]: "Недопустимый формат почты"
+        });
+        setIsValid(false);
+        if (input.value === '' || input.value === null) {
+          setErrors({
+            ...errors, [name]: "Поле обязательно для заполнения"
+          });
+          setIsValid(false);
+        }
+      } else {
+        setErrors({
+          ...errors, [name]: ""
+        });
+        setIsValid(true);
+      }
+    }
+  }
+
   const resetForm = useCallback((newValues = {}, newErrors = {}, newIsValid = false) => {
     setValues(newValues);
     setErrors(newErrors);

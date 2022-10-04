@@ -75,7 +75,7 @@ function App() {
                 .then((res) => {
                     if (res) {
                         setIsLoggedIn(true);
-                        history.push('/');
+                        history.push('/movies');
                     }
                 })
                 .catch((err) => console.log(err));
@@ -99,7 +99,6 @@ function App() {
                 setCurrentUser({ name, email })
                 history.push('/signin')
                 handleLogin({ email, password })
-
             })
             .catch((err) => {
                 setRegisterErrorMessage(err);
@@ -114,7 +113,7 @@ function App() {
                 localStorage.setItem('jwt', res.token);
                 localStorage.setItem('isLoggedIn', true)
                 setIsLoggedIn(true);
-                history.push('/')
+                history.push('/movies')
             })
             .catch((err) => {
                 setIsLoggedIn(false);
@@ -125,7 +124,8 @@ function App() {
     // Выход
     const handleSignOut = () => {
         localStorage.removeItem('jwt');
-        localStorage.removeItem('isLoggedIn')
+        localStorage.removeItem('isLoggedIn');
+        localStorage.clear();
         setCurrentUser({});
         setSavedMovies([]);
         setIsLoggedIn(false);

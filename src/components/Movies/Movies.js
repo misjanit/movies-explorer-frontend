@@ -17,7 +17,7 @@ const Movies = ({
 
     const [movies, setMovies] = useState(JSON.parse(localStorage.getItem('movies')) ?? []);
     const [localShortCheck, setLocalShortCheck] = useState(JSON.parse(localStorage.getItem('movies-check')) || false);
-    const [localSearchValue, setLocalValue] = useState(localStorage.getItem('movies-search-value') || ' ');
+    const [localSearchValue, setLocalValue] = useState(localStorage.getItem('movies-search-value') || '');
     const [isLoading, setIsLoading] = useState(false);
 
     const filteredMovies = useMoviesSearch(movies, localShortCheck, localSearchValue);

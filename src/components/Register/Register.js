@@ -21,11 +21,13 @@ const Register = ({
         <>
             {isLoading ? <Preloader /> :
                 <section className="register__container" >
-                    <img src={require("../../images/logo.svg").default}
-                        className="register__logo"
-                        alt="Логотип"
-                        href="/"
-                    />
+                    <Link to='/'>
+                        <img src={require("../../images/logo.svg").default}
+                            className="register__logo"
+                            alt="Логотип"
+                            href="/"
+                        />
+                    </Link>
                     <div className="register__top">
                         <h3 className="register__title">Добро пожаловать!</h3>
                     </div>

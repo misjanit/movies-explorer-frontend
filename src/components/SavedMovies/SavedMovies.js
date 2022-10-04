@@ -12,7 +12,7 @@ const SavedMovies = ({
 }) => {
 
   const [localShortCheck, setLocaShortlCheck] = useState(JSON.parse(localStorage.getItem('saved-movies-check')) || false);
-  const [localSearchValue, setLocalValue] = useState(localStorage.getItem('saved-movies-search-value') || ' ');
+  const [localSearchValue, setLocalValue] = useState('');
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,7 +27,6 @@ const SavedMovies = ({
 
   function handleMovieSearch(value) {
     prealoderActivity()
-    localStorage.setItem('saved-movies-search-value', value);
     setLocalValue(value);
   };
 
@@ -47,7 +46,7 @@ const SavedMovies = ({
     <>
       <SearchForm
         handleSearch={handleMovieSearch}
-        initialValue={localSearchValue}
+        defaultValue={localSearchValue}
       />
       <FilterCheckBox
         onCheckChange={handleClickOnShorts}

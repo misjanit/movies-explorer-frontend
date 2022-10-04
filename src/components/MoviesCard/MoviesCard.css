@@ -89,7 +89,7 @@
 }
 
 
-/* .film__delete-from-favourite {
+.film__delete-from-favourite {
     width: 10px;
     height: 9px;
 
@@ -98,7 +98,7 @@
 
     background-image: url(../../images/unlike.svg);
     background-repeat: no-repeat;
-} */
+}
 
 .film__unliked {
     width: 10px;

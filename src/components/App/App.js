@@ -27,6 +27,7 @@ function App() {
     const [currentUser, setCurrentUser] = useState({}) // Состояние информации о пользователе
     const [isLoggedIn, setIsLoggedIn] = useState(false); // Состояние авторизации пользователя
     const [registerErrorMessage, setRegisterErrorMessage] = useState(''); // для отображения ошибок при регистр.
+    const [profileIsChanged, setProfileIsChanged] = useState(false);
 
     // Подгон под ширину экрана
     const [width, setWidth] = useState(window.innerWidth);
@@ -75,7 +76,7 @@ function App() {
                 .then((res) => {
                     if (res) {
                         setIsLoggedIn(true);
-                        history.push('/movies');
+                        history.push('/');
                     }
                 })
                 .catch((err) => console.log(err));
@@ -129,7 +130,7 @@ function App() {
         setCurrentUser({});
         setSavedMovies([]);
         setIsLoggedIn(false);
-        history.push('/signin');
+        history.push('/');
     };
 
     // Обновление инф. о пользователе
@@ -138,8 +139,10 @@ function App() {
             .then((res) => {
                 console.log(res)
                 setCurrentUser(res);
+                setProfileIsChanged(true);
             })
             .catch((err) => console.log(err))
+            .finally(setProfileIsChanged(false))
     };
 
     // Добавить фильм в сохр.
@@ -210,7 +213,8 @@ function App() {
                             <Profile
                                 currentUser={currentUser}
                                 onEditProfile={handleUpdateUserInfo}
-                                onSignOut={handleSignOut} />
+                                onSignOut={handleSignOut} 
+                                profileIsChanged={profileIsChanged}/>
                         </Main>
                     </ProtectedRoute>
 
@@ -226,7 +230,7 @@ function App() {
                         </Main>
                     </Route>
 
-                    <Route path='/*'>
+                    <Route path='*'>
                         <NotFound />
                     </Route>
 

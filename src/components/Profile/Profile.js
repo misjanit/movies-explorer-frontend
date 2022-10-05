@@ -3,16 +3,26 @@ import './Profile.css';
 import '../../vendor/normalize.css';
 import useFormValidity from "../../utils/useForms";
 
-const Profile = ({ onEditProfile, onSignOut, currentUser }) => {
+const Profile = ({ onEditProfile, onSignOut, currentUser, profileIsChanged }) => {
 
     const { values, setValues, errors, handleChange, isValid } = useFormValidity();
     const [isClickedOnEditBtn, setIsClickedOnEditBtn] = useState(false);
     const [isChanged, setIsChanged] = useState(true);
+    const [message, setMessage] = useState('')
 
     useEffect(() => {
         const wasInputChanged = values.name === currentUser.name && values.email === currentUser.email;
         setIsChanged(wasInputChanged);
     }, [values, currentUser])
+
+    useEffect(() => {
+        if (profileIsChanged) {
+            setMessage("Данные изменены")
+            setTimeout(() => setMessage(""), 2000);
+        } else {
+            setMessage("")
+        }
+      }, [profileIsChanged]);
 
     function handleClickedOnEditBtn(evt) {
         evt.preventDefault();
@@ -80,6 +90,7 @@ const Profile = ({ onEditProfile, onSignOut, currentUser }) => {
                             {errors.email}
                         </span>
                     </label>
+                    <p className={profileIsChanged ? 'profile__text-edit-active' : 'profile__text-edit-not-active'}>{message}</p>
                     {isClickedOnEditBtn
                         ? (<button
                             className={!isValid || isChanged ? 'profile__edit-profile-btn-not-active' : "profile__edit-profile-btn-active"}

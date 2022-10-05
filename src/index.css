@@ -5,9 +5,9 @@ body {
     margin: 0;
     scrollbar-width: none;
   }
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     width: 0;
-  }
+  } */
   .page {
     font-family: 'Inter', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

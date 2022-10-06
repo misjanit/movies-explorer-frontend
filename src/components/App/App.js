@@ -63,7 +63,11 @@ function App() {
     // Проверка авторизованности
     useEffect(() => {
         tokenCheck();
-        if (isLoggedIn) getContent();
+        if (isLoggedIn) {
+            getContent();
+        } else {
+            handleSignOut();
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isLoggedIn]);
 
@@ -75,7 +79,7 @@ function App() {
                 .then((res) => {
                     if (res) {
                         setIsLoggedIn(true);
-                    }
+                    } 
                 })
                 .catch((err) => console.log(err));
         }

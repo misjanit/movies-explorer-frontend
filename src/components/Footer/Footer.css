@@ -1,0 +1,140 @@
+.footer__container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1280px;
+
+    margin: 0 auto 20px auto;
+
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+@media screen and (max-width: 320px) {
+    .footer__container {
+        margin: 0 auto 10px auto;
+    }
+}
+
+.footer__caption {
+    max-width: 1140px;
+    width: calc(100% - 140px);
+
+    margin: 80px auto 20px auto;
+    padding: 0;
+    padding-bottom: 23px;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #A0A0A0;
+}
+
+@media screen and (max-width: 445px) {
+    .footer__caption {
+        width: calc(100% - 20px);
+        margin: 80px auto 20px auto;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .footer__caption {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: row;
+
+    max-width: 1140px;
+    width: calc(100% - 140px);
+
+    margin: 0px 70px 20px 70px;
+
+    justify-content: space-between;
+}
+
+.footer__year {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.footer__year-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 445px) {
+    .footer__year {
+        display: none;
+    }
+
+    .footer__year-mobile {
+        display: block;
+        
+        margin: 18px auto 0 auto;
+
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        color: #A0A0A0;
+    }
+}
+
+.footer__socials {
+    display: flex;
+    flex-direction: row;
+
+    margin: 0;
+}
+
+@media screen and (max-width: 445px) {
+    .footer__socials {
+        flex-direction: column;
+
+        margin: 0 auto;
+
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.footer__yandex-practicum {
+    margin: 0 20px 0 0;
+
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.footer__github {
+    margin: 0 20px 0 0;
+
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+
+}
+
+.footer__vk {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+@media screen and (max-width: 445px) {
+    .footer__yandex-practicum,
+    .footer__github,
+    .footer__vk {
+        margin: 0 auto 12px auto;
+    }
+}

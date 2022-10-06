@@ -1,0 +1,28 @@
+.movies {
+    max-width: 1280px;
+    width: calc(100% - 140px);
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 850px) {
+    .movies {
+        width: calc(100% - 60px);
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .movies {
+        width: calc(100% - 20px);
+    }
+}
+
+.movies__notfound-text {
+    display: block;
+    margin: 0 auto 30vh auto;
+
+    text-align: center;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+}

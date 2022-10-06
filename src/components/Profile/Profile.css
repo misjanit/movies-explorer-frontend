@@ -1,0 +1,286 @@
+.profile__container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1280px;
+    width: 100%;
+
+    margin: 74px auto 0 auto;
+    padding: 0;
+
+    background: white;
+
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__container {
+        width: calc(100% - 60px);
+        margin: 186px auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .profile__container {
+        width: calc(100% - 60px);
+        margin: 20px auto 0 auto;
+    }
+}
+
+.profile__main {
+    max-width: 410px;
+    width: 100%;
+
+    margin: 0 auto 0 auto;
+    padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__main {
+        margin: 0 auto 210px auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .profile__main {
+        margin: 0 auto 379px auto;
+    }
+}
+
+.profile__title {
+    margin: 0 auto 123px auto;
+    padding: 0;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__title {
+        font-size: 24px;
+    }
+}
+
+.profile__username-wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    height: 14px;
+
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    padding-bottom: 16px;
+    overflow: hidden;
+}
+
+.profile__username {
+    margin: 0;
+    padding: 0;
+
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.profile__name-of-user {
+    margin: 0 0 0 auto;
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+}
+
+.profile__line {
+    width: 100%;
+    height: 1px;
+
+    border-bottom: 1px solid #E8E8E8;
+
+    margin: 0;
+    padding: 0;
+}
+
+.profile__error-message {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+    color: red;
+
+    text-align: right;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.profile__error-message_unactive {
+    display: none;
+}
+
+.profile__email-wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    align-items: center;
+
+    margin: 17px 0 0 0;
+    padding: 0;
+    padding-bottom: 22px;
+    overflow: hidden;
+}
+
+.profile__email {
+    margin: 0;
+    padding: 0;
+
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.profile__email-of-user {
+    margin: 0 0 0 auto;
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+}
+
+.profile__control-menu {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 410px;
+    width: 100%;
+
+    margin: 0 auto auto auto;
+    padding: 0;
+}
+
+.profile__edit-profile-btn {
+    width: 100%;
+    height: 16px;
+
+    margin: 210px auto 16px auto;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    transition: all .3s ease;
+}
+
+.profile__edit-profile-btn-active {
+    width: 100%;
+    height: 45px;
+    border: none;
+
+    margin: 210px auto 16px auto;
+    padding: 0;
+
+    color: white;
+    background: #3456F3;
+    border: none;
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.profile__edit-profile-btn-not-active {
+    width: 100%;
+    height: 45px;
+    border: none;
+
+    margin: 210px auto 16px auto;
+    padding: 0;
+
+    color: #c2c2c2;
+    background: #F8F8F8;
+    border: none;
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.profile__logout-btn {
+    width: 100%;
+    height: 16px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    color: #EE3465;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    text-align: center;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+@media screen and (max-width: 320px) {
+    .profile__logout-btn {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.profile__text-edit-active {
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    margin: 60px auto 0 auto;
+
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+}

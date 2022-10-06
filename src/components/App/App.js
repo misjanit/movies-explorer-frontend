@@ -65,8 +65,6 @@ function App() {
         tokenCheck();
         if (isLoggedIn) {
             getContent();
-        } else if (!isLoggedIn) {
-            handleSignOut();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isLoggedIn]);
@@ -82,6 +80,8 @@ function App() {
                     } 
                 })
                 .catch((err) => console.log(err));
+        } else {
+            handleSignOut();
         }
     };
 

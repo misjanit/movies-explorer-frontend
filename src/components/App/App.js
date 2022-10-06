@@ -60,7 +60,6 @@ function App() {
         return () => window.removeEventListener('resize', newWindowWidth)
     }, []);
 
-
     // Проверка авторизованности
     useEffect(() => {
         tokenCheck();
@@ -76,7 +75,6 @@ function App() {
                 .then((res) => {
                     if (res) {
                         setIsLoggedIn(true);
-                        history.push('/');
                     }
                 })
                 .catch((err) => console.log(err));

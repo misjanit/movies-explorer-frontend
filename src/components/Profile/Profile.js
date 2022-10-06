@@ -17,10 +17,7 @@ const Profile = ({ onEditProfile, onSignOut, currentUser, profileIsChanged }) =>
 
     useEffect(() => {
         if (profileIsChanged) {
-            setMessage("Данные изменены")
             setTimeout(() => setMessage(""), 2000);
-        } else {
-            setMessage("")
         }
       }, [profileIsChanged]);
 
@@ -41,6 +38,7 @@ const Profile = ({ onEditProfile, onSignOut, currentUser, profileIsChanged }) =>
     function formSubmit(evt) {
         evt.preventDefault();
         onEditProfile(values);
+        setMessage("Данные изменены")
         setIsClickedOnEditBtn(false);
     };
 
@@ -90,7 +88,7 @@ const Profile = ({ onEditProfile, onSignOut, currentUser, profileIsChanged }) =>
                             {errors.email}
                         </span>
                     </label>
-                    <p className={profileIsChanged ? 'profile__text-edit-active' : 'profile__text-edit-not-active'}>{message}</p>
+                    <p className='profile__text-edit-active'>{message}</p>
                     {isClickedOnEditBtn
                         ? (<button
                             className={!isValid || isChanged ? 'profile__edit-profile-btn-not-active' : "profile__edit-profile-btn-active"}

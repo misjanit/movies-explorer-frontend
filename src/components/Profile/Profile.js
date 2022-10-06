@@ -97,10 +97,10 @@ const Profile = ({ onEditProfile, onSignOut, currentUser, profileIsChanged }) =>
                         : (<button className="profile__edit-profile-btn" type='button' onClick={handleClickedOnEditBtn}>Редактировать</button>)
                     }
                 </form>
-            </main>
-            <button className="profile__logout-btn" type='button' onClick={handleSignOut}>
+                <button className="profile__logout-btn" type='button' onClick={handleSignOut}>
                 Выйти из аккаунта
             </button>
+            </main>
         </section >
     )
 };

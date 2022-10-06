@@ -271,9 +271,10 @@
 }
 
 .profile__text-edit-active {
-    width: 410px;
     display: block;
     position: absolute;
+    right: 0;
+    left: 0;
 
     margin: 60px auto 0 auto;
 

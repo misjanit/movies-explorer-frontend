@@ -1,13 +1,17 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import useFormValidity from '../../utils/useForms';
 import Preloader from "../Preloader/Preloader";
 import './Login.css';
 
-const Login = ({ onLogin }) => {
+const Login = ({ 
+    onLogin, 
+    isLoggedIn 
+}) => {
 
     const { values, errors, isValid, handleChange } = useFormValidity();
     const [isLoading, setIsLoading] = useState(false);
+    const history = useHistory();
 
     function prealoderActivity() {
         setIsLoading(true)
@@ -21,6 +25,12 @@ const Login = ({ onLogin }) => {
         onLogin(values);
         setIsLoading(false);
     };
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            history.push('/')
+        }
+    }, [isLoggedIn, history]);
 
     return (
         <>

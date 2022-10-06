@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import useFormValidity from '../../utils/useForms';
 import Preloader from "../Preloader/Preloader";
 import './Register.css';
@@ -7,15 +7,23 @@ import './Register.css';
 const Register = ({
     onRegister,
     isLoading,
-    registerErrorMessage
+    registerErrorMessage,
+    isLoggedIn
 }) => {
 
     const { values, errors, isValid, handleChange } = useFormValidity();
+    const history = useHistory();
 
     function formSubmit(evt) {
         evt.preventDefault();
         onRegister(values);
     };
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            history.push('/')
+        }
+    }, [isLoggedIn, history]);
 
     return (
         <>

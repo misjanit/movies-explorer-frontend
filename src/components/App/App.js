@@ -81,6 +81,7 @@ function App() {
                 })
                 .catch((err) => console.log(err));
         } else {
+            setIsLoggedIn(false);
             handleSignOut();
         }
     };
@@ -222,13 +223,13 @@ function App() {
 
                     <Route path='/signin'>
                         <Main>
-                            <Login onLogin={handleLogin} />
+                            <Login onLogin={handleLogin} isLoggedIn={isLoggedIn} />
                         </Main>
                     </Route>
 
                     <Route exact path='/signup'>
                         <Main>
-                            <Register onRegister={handleRegister} registerErrorMessage={registerErrorMessage} />
+                            <Register onRegister={handleRegister} registerErrorMessage={registerErrorMessage} isLoggedIn={isLoggedIn} />
                         </Main>
                     </Route>
 
